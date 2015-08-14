@@ -1,4 +1,4 @@
-package main
+package relayplug
 
 import (
 	"fmt"
@@ -6,10 +6,11 @@ import (
 	"net/smtp"
 
 	"github.com/influx6/flux"
-	somtp "github.com/influx6/smtp"
+	somtp "github.com/influx6/relay/smtp"
 )
 
-func main() {
+//PlugPlay just runs a basic test case
+func PlugPlay() {
 
 	mc := somtp.MetaConfig{Hostname: "localhost"}
 
@@ -77,17 +78,3 @@ func main() {
 		log.Fatal(err)
 	}
 }
-
-// func ExamplePlainAuth() {
-// 	// Set up authentication information.
-// 	auth := smtp.PlainAuth("", "user@example.com", "password", "mail.example.com")
-//
-// 	// Connect to the server, authenticate, set the sender and recipient,
-// 	// and send the email all in one step.
-// 	to := []string{"recipient@example.net"}
-// 	msg := []byte("This is the email body.")
-// 	err := smtp.SendMail("mail.example.com:25", auth, "sender@example.org", to, msg)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// }
